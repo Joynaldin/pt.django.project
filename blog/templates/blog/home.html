@@ -3,10 +3,16 @@
 
 {% for blog in blog_post %}
 
-<h1>{{blog.title}}</h1>
-<h4>{{blog.content}}</h4>
-<p>{{blog.author}}</p>
-<p>{{blog.post_create_date}}</p>
+<article class="media content-section">
+  <div class="media-body">
+    <div class="article-metadata">
+      <a class="mr-2" href="#">{{ blog.author }}</a>
+      <small class="text-muted">{{ blog.post_create_date }}</small>
+    </div>
+    <h2><a class="article-title" href="#">{{ blog.title }}</a></h2>
+    <p class="article-content">{{ blog.content }}</p>
+  </div>
+</article>
 {% endfor %}
 
 {% endblock %}
